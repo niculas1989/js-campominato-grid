@@ -74,6 +74,8 @@ button.addEventListener('click', function () {
                 })
             }
             break;
+        default:
+            alert('Devi scegliere una delle difficoltà!');
     }
 })
 
