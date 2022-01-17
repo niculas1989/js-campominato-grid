@@ -18,6 +18,14 @@ Le validazioni e i controlli possiamo farli anche in un secondo momento.
 //! Suddivisione steb-by-step
 //! Creazione funzioni utili
 
+// Funzione per creare le celle
+function createCell(num) {
+    const cell = document.createElement('div');
+    cell.classList.add('grid');
+    cell.id = num;
+    cell.innerText = num;
+    return cell;
+}
 
 
 
@@ -29,6 +37,13 @@ Le validazioni e i controlli possiamo farli anche in un secondo momento.
 
 // generazioni costanti
 const difficulty = document.getElementById('difficulty');
+const resultElement = document.getElementById('result');
+
+
+resultElement.appendChild(createCell(10));
+
+
+
 
 
 
