@@ -48,8 +48,9 @@ button.addEventListener('click', function () {
             for (let i = 1; i <= 100; i++) {
                 const cell = createCell(i);
                 resultElement.appendChild(cell);
+                cell.classList.add('d-one');
                 cell.addEventListener('click', function () {
-                    cell.classList.add('clicked');
+                    cell.classList.toggle('clicked');
                 })
             }
             break;
@@ -57,8 +58,9 @@ button.addEventListener('click', function () {
             for (let i = 1; i <= 81; i++) {
                 const cell = createCell(i);
                 resultElement.appendChild(cell);
+                cell.classList.add('d-two');
                 cell.addEventListener('click', function () {
-                    cell.classList.toogle('clicked');
+                    cell.classList.toggle('clicked');
                 })
             }
             break;
@@ -66,16 +68,14 @@ button.addEventListener('click', function () {
             for (let i = 1; i <= 49; i++) {
                 const cell = createCell(i);
                 resultElement.appendChild(cell);
+                cell.classList.add('d-three');
                 cell.addEventListener('click', function () {
-                    cell.classList.toogle('clicked');
+                    cell.classList.toggle('clicked');
                 })
             }
             break;
     }
 })
-
-
-// resultElement.appendChild(createCell(10));
 
 
 
