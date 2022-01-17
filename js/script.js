@@ -40,7 +40,32 @@ const difficulty = document.getElementById('difficulty');
 const resultElement = document.getElementById('result');
 
 
-resultElement.appendChild(createCell(10));
+
+difficulty.addEventListener('click', function () {
+    switch (difficulty.value) {
+        case '1':
+            for (let i = 1; i <= 100; i++) {
+                const cell = createCell(i);
+                resultElement.appendChild(cell);
+            }
+            break;
+        case '2':
+            for (let i = 1; i <= 81; i++) {
+                const cell = createCell(i);
+                resultElement.appendChild(cell);
+            }
+            break;
+        case '3':
+            for (let i = 1; i <= 49; i++) {
+                const cell = createCell(i);
+                resultElement.appendChild(cell);
+            }
+            break;
+    }
+})
+
+
+// resultElement.appendChild(createCell(10));
 
 
 
