@@ -21,7 +21,7 @@ Le validazioni e i controlli possiamo farli anche in un secondo momento.
 // Funzione per creare le celle
 function createCell(num) {
     const cell = document.createElement('div');
-    cell.classList.add('grid');
+    cell.classList.add('cell');
     cell.id = num;
     cell.innerText = num;
     return cell;
@@ -38,27 +38,37 @@ function createCell(num) {
 // generazioni costanti
 const difficulty = document.getElementById('difficulty');
 const resultElement = document.getElementById('result');
+const button = document.getElementById('button');
 
 
 
-difficulty.addEventListener('click', function () {
+button.addEventListener('click', function () {
     switch (difficulty.value) {
         case '1':
             for (let i = 1; i <= 100; i++) {
                 const cell = createCell(i);
                 resultElement.appendChild(cell);
+                cell.addEventListener('click', function () {
+                    cell.classList.add('clicked');
+                })
             }
             break;
         case '2':
             for (let i = 1; i <= 81; i++) {
                 const cell = createCell(i);
                 resultElement.appendChild(cell);
+                cell.addEventListener('click', function () {
+                    cell.classList.toogle('clicked');
+                })
             }
             break;
         case '3':
             for (let i = 1; i <= 49; i++) {
                 const cell = createCell(i);
                 resultElement.appendChild(cell);
+                cell.addEventListener('click', function () {
+                    cell.classList.toogle('clicked');
+                })
             }
             break;
     }
