@@ -27,6 +27,17 @@ function createCell(num) {
     return cell;
 }
 
+function createParticularCell(number, difficulty) {
+    for (let i = 1; i <= number; i++) {
+        const cell = createCell(i);
+        resultElement.appendChild(cell);
+        cell.classList.add(difficulty);
+        cell.addEventListener('click', function () {
+            cell.classList.toggle('clicked');
+        })
+    }
+}
+
 
 
 
@@ -45,34 +56,13 @@ const button = document.getElementById('button');
 button.addEventListener('click', function () {
     switch (difficulty.value) {
         case '1':
-            for (let i = 1; i <= 100; i++) {
-                const cell = createCell(i);
-                resultElement.appendChild(cell);
-                cell.classList.add('d-one');
-                cell.addEventListener('click', function () {
-                    cell.classList.toggle('clicked');
-                })
-            }
+            createParticularCell(100, 'd-one');
             break;
         case '2':
-            for (let i = 1; i <= 81; i++) {
-                const cell = createCell(i);
-                resultElement.appendChild(cell);
-                cell.classList.add('d-two');
-                cell.addEventListener('click', function () {
-                    cell.classList.toggle('clicked');
-                })
-            }
+            createParticularCell(81, 'd-two');
             break;
         case '3':
-            for (let i = 1; i <= 49; i++) {
-                const cell = createCell(i);
-                resultElement.appendChild(cell);
-                cell.classList.add('d-three');
-                cell.addEventListener('click', function () {
-                    cell.classList.toggle('clicked');
-                })
-            }
+            createParticularCell(49, 'd-three');
             break;
         default:
             alert('Devi scegliere una delle difficoltà!');
